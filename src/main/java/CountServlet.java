@@ -15,8 +15,6 @@ public class CountServlet extends HttpServlet {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
 
-        System.out.println("counter = " + counter);
-        counter++;
 
         String resetCount = req.getParameter("reset");
 
@@ -25,8 +23,10 @@ public class CountServlet extends HttpServlet {
             counter = 0;
             out.println("<h1>Your count is " + counter);
         } else {
+            counter++;
             out.println("<h1>Your count is " + counter);
         }
+        System.out.println("counter = " + counter);
 
     }
 }
