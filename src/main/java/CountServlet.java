@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 public class CountServlet extends HttpServlet {
 
     private int counter = 0;
-
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException {
         res.setContentType("text/html");
         PrintWriter out = res.getWriter();
