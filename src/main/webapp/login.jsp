@@ -3,14 +3,17 @@
 
 <html>
 <%@ include file="partials/head.jsp" %>
-<body class="container">
+<body>
 <%@ include file="partials/navbar.jsp" %>
+<div class="container">
+    <%@ include file="partials/form.jsp" %>
+    <c:if test="${param.username.equals('admin') && param.password.equals('password')}">
+        <meta http-equiv="Refresh" content="0; url='http://localhost:8080/profile.jsp'"/>
+    </c:if>
+</div>
 
-<%@ include file="partials/form.jsp" %>
-<c:if test="${param.username == 'admin'}">
-    <meta http-equiv="Refresh" content="0; url='http://localhost:8080/profile.jsp'" />
-</c:if>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+<%@ include file="partials/scripts.jsp" %>
+
 </body>
 </html>
