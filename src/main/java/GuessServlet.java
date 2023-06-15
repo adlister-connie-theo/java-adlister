@@ -25,11 +25,13 @@ public class GuessServlet extends HttpServlet {
 
         System.out.println(input);
         System.out.println(random_int);
-        if(input == random_int) {
+        if(input < min || input > max ) {
+            System.out.println("incorrect input");
+            response.sendRedirect("/guess");
+        } else if(input == random_int){
             response.sendRedirect("/correct");
         } else {
             response.sendRedirect("/incorrect");
-
         }
 
 
