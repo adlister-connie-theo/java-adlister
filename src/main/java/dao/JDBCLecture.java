@@ -1,4 +1,7 @@
+package dao;
+
 import com.mysql.cj.jdbc.Driver;
+import models.Dog;
 
 import java.sql.*;
 

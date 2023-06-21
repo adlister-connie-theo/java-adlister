@@ -1,4 +1,7 @@
+package dao;
+
 import com.mysql.cj.jdbc.Driver;
+import models.Ad;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -62,22 +65,45 @@ public class MySQLAdsDao implements Ads {
 
     @Override
     public Long insert(Ad ad) {
+        Long newId;
         try {
+            //1. make a statement
+            Statement st = connection.createStatement();
+
+            //2. execute the insert
             String query = "INSERT INTO ads (title, user_id, description) VALUES ('"
                     + ad.getTitle() + "', "
                     + ad.getUserId() + ", '"
                     + ad.getDescription()
                     + "')";
-//            String query = "INSERT INTO ads (id, title, user_id, description) VALUES (11, 'nintendo46 for sale', 1, 'brand new in box')";
-            Statement st = connection.createStatement();
             st.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
-            ResultSet keys =  st.getGeneratedKeys();
+            // 3. get the id of the newly inserted record
+            ResultSet keys = st.getGeneratedKeys();
             keys.next();
-            long newKey = keys.getLong(1);
-            return newKey;
-
+            newId = keys.getLong(1);
+            return newId;
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+//    public Long insert(Ad ad) {
+//        try {
+//            String query = "INSERT INTO ads (title, user_id, description) VALUES ('"
+//                    + ad.getTitle() + "', "
+//                    + ad.getUserId() + ", '"
+//                    + ad.getDescription()
+//                    + "')";
+////            String query = "INSERT INTO ads (id, title, user_id, description) VALUES (11, 'nintendo46 for sale', 1, 'brand new in box')";
+//            Statement st = connection.createStatement();
+//            st.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+//            ResultSet keys =  st.getGeneratedKeys();
+//            keys.next();
+//            long newKey = keys.getLong(1);
+//            return newKey;
+//
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+
 }
