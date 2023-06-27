@@ -14,29 +14,34 @@
             <div class="form-group">
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
-                <c:if test="${boolean_expression}">
-                    ...
-                </c:if>
+                <c:choose>
+                    <c:when test="${usernameIsEmpty}">
+                        <p>Username cannot be empty</p>
+                    </c:when>
+                    <c:when test="${usernameExists}">
+                        <p>Username exists already, please try another.</p>
+                    </c:when>
+                </c:choose>
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" name="email" class="form-control" type="text">
-                <c:if test="${boolean_expression}">
-                    ...
+                <c:if test="${emailIsEmpty}">
+                    <p>Email cannot be empty</p>
                 </c:if>
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
-                <c:if test="${boolean_expression}">
-                    ...
+                <c:if test="${passwordIsEmpty}">
+                    <p>Password cannot be empty</p>
                 </c:if>
             </div>
             <div class="form-group">
                 <label for="confirm_password">Confirm Password</label>
                 <input id="confirm_password" name="confirm_password" class="form-control" type="password">
-                <c:if test="${boolean_expression}">
-                    ...
+                <c:if test="${passwordDoesntMatch}">
+                    <p>Password does not match</p>
                 </c:if>
             </div>
             <input type="submit" class="btn btn-primary btn-block">
