@@ -28,9 +28,10 @@
                 <img src="https://images.unsplash.com/photo-1604043705156-f448129cd111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
                      class="card-img-top" alt="...">
                 <div class="card-body">
-                    <div class="col-md-6">
-                        <h2>${ad.title}</h2>
-                        <p>${ad.description}</p>
+                    <div class="card-body">
+                        <h5 class="card-title">${ad.title}</h5>
+                        <p class="card-text">${ad.description}</p>
+
                     </div>
 
                         <%--        <form action="/ads/details" method="get">--%>
