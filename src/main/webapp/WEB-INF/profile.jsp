@@ -33,7 +33,6 @@
     function deleteAd() {
         console.log("this is the delete button")
         alert("are you sure you want to delete this?")
-
     }
 </script>
 
