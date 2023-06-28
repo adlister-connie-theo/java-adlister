@@ -85,6 +85,21 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> adsByID(int id) {
+        String query = "SELECT * FROM ads WHERE id = ?";
+        PreparedStatement stmt;
+        try {
+            stmt = connection.prepareStatement(query);
+            stmt.setInt(1, id);
+
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
                 rs.getLong("id"),
@@ -101,6 +116,20 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
-
+//    @Override
+//    public List<Ad> adsByUsername(String username) {
+//        String query = "SELECT * FROM ads WHERE user_id = ?";
+//        PreparedStatement stmt;
+//        try {
+//            stmt = connection.prepareStatement(query);
+//            stmt.setLong(1, DaoFactory.getUsersDao().findByUsername(username).getId());
+//
+//            ResultSet rs = stmt.executeQuery();
+//            return createAdsFromResults(rs);
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error retrieving all ads.", e);
+//        }
+//
+//    }
 
 }
