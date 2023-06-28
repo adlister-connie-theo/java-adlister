@@ -151,20 +151,4 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
-//    @Override
-//    public List<Ad> adsByUsername(String username) {
-//        String query = "SELECT * FROM ads WHERE user_id = ?";
-//        PreparedStatement stmt;
-//        try {
-//            stmt = connection.prepareStatement(query);
-//            stmt.setLong(1, DaoFactory.getUsersDao().findByUsername(username).getId());
-//
-//            ResultSet rs = stmt.executeQuery();
-//            return createAdsFromResults(rs);
-//        } catch (SQLException e) {
-//            throw new RuntimeException("Error retrieving all ads.", e);
-//        }
-//
-//    }
-
 }
