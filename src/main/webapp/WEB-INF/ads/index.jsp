@@ -11,7 +11,7 @@
 
 
 <div class="container">
-    <div class="container">
+    <div class="container ">
         <h1>Here Are all the ads!</h1>
         <h2>Search for an ad</h2>
             <form action="/ads" method="get">
@@ -19,6 +19,7 @@
                     <input id="ad_search" name="ad_search" class="form-control" type="text">
                 <input type="submit" class="btn btn-block btn-primary">
             </form>
+        <div class="container gap-3 d-flex flex-row flex-wrap justify-content-center">
         <c:forEach var="ad" items="${ads}">
             <div class="card" style="width: 18rem;">
                 <img src="https://images.unsplash.com/photo-1604043705156-f448129cd111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
@@ -34,6 +35,7 @@
                 </div>
             </div>
         </c:forEach>
+        </div>
     </div>
 
 </div>
