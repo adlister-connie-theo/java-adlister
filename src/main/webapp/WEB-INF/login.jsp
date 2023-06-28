@@ -7,6 +7,9 @@
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
+    <body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
+
     <div class="container">
         <h1>Please Log In</h1>
         <h2>Pretty please</h2>

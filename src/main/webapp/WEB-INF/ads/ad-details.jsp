@@ -11,8 +11,14 @@
 <html>
 <head>
     <title>Ad Details</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
 </head>
 <body>
+
+<body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
+
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
  <h1>This is the Ads Detail Page</h1>
  <c:forEach var="ad" items="${ads}">
      <div class="col-md-6">
