@@ -20,16 +20,12 @@ public class ViewProfileServlet extends HttpServlet {
             return;
         }
         request.setAttribute("ads", DaoFactory.getAdsDao().adsByUsername(loggedInUser.getUsername()));
-        //Delete works, just need to get dynamic id from click, and pass this to the jsp
-//        DaoFactory.getAdsDao().deleteAd(32);
-//        Ad ad = new Ad(30, 6, "Cats for Sale!", "Litter of cats please take one!");
-//        DaoFactory.getAdsDao().update(ad);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int adID = Integer.parseInt(request.getParameter("ad_id"));
-        DaoFactory.getAdsDao().deleteAd(adID);
+        int adId = Integer.parseInt(request.getParameter("adId"));
+        DaoFactory.getAdsDao().deleteAd(adId);
         response.sendRedirect("/profile");
     }
 

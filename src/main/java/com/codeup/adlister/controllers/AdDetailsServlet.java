@@ -11,20 +11,11 @@ import java.io.IOException;
 public class AdDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-        System.out.println(request.getParameter("ad_id"));
-        int adID = Integer.parseInt( request.getParameter("ad_id"));
+        // get the id of the ad
+        int adID = Integer.parseInt( request.getParameter("adId"));
+        // get the ad by id
         request.setAttribute("ads", DaoFactory.getAdsDao().adsByID(adID));
-
-
-
-        request.getRequestDispatcher("/WEB-INF/ads/ad-details.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/ads/details.jsp").forward(request, response);
     }
 
-
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
 }

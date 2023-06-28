@@ -12,7 +12,6 @@
 
     <div class="container">
         <h1>Please Log In</h1>
-        <h2>Pretty please</h2>
         <form action="/login" method="POST">
             <div class="form-group">
                 <label for="username">Username</label>
@@ -25,6 +24,7 @@
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
     </div>
+    <jsp:include page="/WEB-INF/partials/script.jsp" />
 </body>
     <footer>
         <jsp:include page="/WEB-INF/partials/footer.jsp" />
