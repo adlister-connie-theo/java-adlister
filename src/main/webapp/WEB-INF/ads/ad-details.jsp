@@ -10,14 +10,17 @@
 
 <html>
 <head>
-    <title>Ad Details</title>
-    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <jsp:include page="/WEB-INF/partials/head.jsp">
+        <jsp:param name="title" value="Ad Details Page" />
+    </jsp:include>
+<%--    <link rel="stylesheet" type="text/css" href="/css/styles.css">--%>
 </head>
 <body>
-
 <body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
 
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
+
 
  <h1>This is the Ads Detail Page</h1>
  <c:forEach var="ad" items="${ads}">
@@ -27,4 +30,7 @@
      </div>
  </c:forEach>
 </body>
+<footer>
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
+</footer>
 </html>

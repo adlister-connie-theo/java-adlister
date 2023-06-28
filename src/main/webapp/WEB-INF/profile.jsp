@@ -6,13 +6,22 @@
     <jsp:include page="/WEB-INF/partials/head.jsp">
         <jsp:param name="title" value="Your Profile" />
     </jsp:include>
+
+
+
 </head>
 <body>
+
+
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+
 
     <body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
 
-    <div class="container">
+
+
+
+    <div class="container d-flex justify-content-center;">
         <h1>Welcome Welcome, ${sessionScope.user.username}!</h1>
         <div class="container">
             <h1>Here Are all your ads!</h1>
@@ -41,6 +50,9 @@
         alert("are you sure you want to delete this?")
     }
 </script>
-
 </body>
+    <footer>
+        <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    </footer>
+
 </html>

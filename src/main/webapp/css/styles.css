@@ -1,37 +1,27 @@
-/* styles.css */
+/*!* styles.css *!*/
 
-body {
-    /*display: flex;*/
-    /*justify-content: center;*/
-    /*align-content: space-between;*/
-    /*background: #001F35;*/
-    /*color: #3D403D;*/
-    color: white;
-    font-family: sans-serif;
-}
+/*body {*/
+/*    !*display: flex;*!*/
+/*    !*justify-content: center;*!*/
+/*    !*align-content: space-between;*!*/
+/*    !*background: #001F35;*!*/
+/*    !*color: #3D403D;*!*/
+/*    color: white;*/
+/*    font-family: sans-serif;*/
+/*}*/
 
-h1 {
-    color: red;
-}
+/*h1 {*/
+/*    color: red;*/
+/*}*/
 
-p{
-    color: #00D4ED;;
-}
+/*p{*/
+/*    color: #00D4ED;;*/
+/*}*/
 
-.ad-details {
+/*.ad-details {*/
 
-}
-
-
+/*}*/
 
 
-.index {
-
-
-}
-
-.register {
-
-}
 
 /* Add more CSS styles as needed */

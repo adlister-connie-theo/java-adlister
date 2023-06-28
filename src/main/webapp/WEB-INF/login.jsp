@@ -26,4 +26,7 @@
         </form>
     </div>
 </body>
+    <footer>
+        <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    </footer>
 </html>
