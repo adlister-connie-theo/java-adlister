@@ -14,15 +14,13 @@ import java.io.IOException;
 public class ViewProfileServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         User loggedInUser = (User) request.getSession().getAttribute("user");
-
         if (loggedInUser == null) {
             response.sendRedirect("/login");
             return;
         }
         request.setAttribute("ads", DaoFactory.getAdsDao().adsByUsername(loggedInUser.getUsername()));
-
-        //get full list of ads and sort it by username
-
+        //Delete works, just need to get dynamic id from click, and pass this to the jsp
+//        DaoFactory.getAdsDao().deleteAd(32);
         request.getRequestDispatcher("/WEB-INF/profile.jsp").forward(request, response);
     }
 }
