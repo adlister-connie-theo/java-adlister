@@ -22,6 +22,11 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <form action="/ads/details" method="get">
+                <label for="ad_id"></label>
+                <input style="display: none;" name="ad_id" id="ad_id" value=${ad.id} type="text"/>
+                <input type="submit" class="btn btn-block btn-primary" value= "See Details">
+            </form>
         </div>
     </c:forEach>
 </div>
