@@ -9,6 +9,13 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
+
+<body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
+
+</body>
+
+
+
 <div class="container">
     <h1>Here Are all the ads!</h1>
     <h2>Search for an ad</h2>

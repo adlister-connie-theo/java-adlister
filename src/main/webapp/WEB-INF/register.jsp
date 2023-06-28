@@ -7,7 +7,10 @@
     </jsp:include>
 </head>
 <body>
+<body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
+
     <jsp:include page="partials/navbar.jsp" />
+
     <div class="container">
         <h1>Please fill in your information.</h1>
         <form action="/register" method="post">
