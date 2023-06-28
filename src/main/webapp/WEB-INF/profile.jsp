@@ -4,43 +4,40 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Your Profile" />
+        <jsp:param name="title" value="Your Profile"/>
     </jsp:include>
 </head>
-<body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
 
-    <body style="background-image: url('/assets/photo-1541140134513-85a161dc4a00.avif');">
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
+
+<div class="container">
+    <h1>Welcome, ${sessionScope.user.username}!</h1>
     <div class="container">
-        <h1>Welcome Welcome, ${sessionScope.user.username}!</h1>
-        <div class="container">
-            <h1>Here Are all your ads!</h1>
+        <h1>Here Are all your ads!</h1>
 
-            <c:forEach var="ad" items="${ads}">
-                <div class="col-md-6">
-                    <h2>${ad.title}</h2>
-                    <p>${ad.description}</p>
+        <c:forEach var="ad" items="${ads}">
+            <div class="card" style="width: 18rem;">
+                <img src="https://images.unsplash.com/photo-1604043705156-f448129cd111?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+                     class="card-img-top" alt="...">
+                <div class="card-body">
+                    <form action="/ads/update" method="get">
+                        <input type="hidden" id="ad_id" value=${ad.id} name="adId">
+                        <h5 class="card-title">${ad.title}</h5>
+                        <p class="card-text">${ad.description}</p>
+                        <button type="submit">Update</button>
+                    </form>
                     <form action="/profile" method="post">
-                        <label for="ad_id"></label>
-                        <input style="display: none;" type="text" id="ad_id" value=${ad.id} name="ad_id">
-                        <button type="submit" onclick="updateAd()">Update</button>
-                        <button type="submit" onclick="deleteAd()">Delete</button>
+                        <input type="hidden" value=${ad.id} name="adId">
+                        <button type="submit">Delete</button>
                     </form>
                 </div>
-            </c:forEach>
-        </div>
-
+            </div>
+        </c:forEach>
     </div>
-<script>
-    function updateAd() {
-        console.log("this is the update button")
-    }
-    function deleteAd() {
-        console.log("this is the delete button")
-        alert("are you sure you want to delete this?")
-    }
-</script>
 
+</div>
+<jsp:include page="/WEB-INF/partials/script.jsp" />
 </body>
 </html>
