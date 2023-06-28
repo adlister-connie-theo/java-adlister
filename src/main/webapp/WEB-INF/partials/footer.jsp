@@ -13,23 +13,16 @@
         bottom: 20px;
         right: 20px;
         padding: 5px;
-        background-color: blue;
+        background-color: #0c6dfd;
         color: #fff;
         text-decoration: none;
+        border-radius: 5px;
     }
 
 
 
     footer {
-        position: fixed;
-        left: 0;
-        bottom: 0;
-        padding: 15px;
-        width: 100%;
-        background-color: White;
-        color: black;
-       font-size: medium;
-        text-align: center;
+        margin-top: 4rem;
     }
 
 
@@ -37,7 +30,7 @@
 
 </body>
 <footer>
-    <p>team-connie-theo-java-ad</p>
+<%--    <p>team-connie-theo-java-ad</p>--%>
     <a href="#top" class="back-to-top">Back to Top</a>
 
 </footer>
