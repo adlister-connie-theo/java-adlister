@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdsDao implements Ads {
-    private Connection connection = null;
+    private Connection connection;
 
     public MySQLAdsDao(Config config) {
         try {
@@ -82,6 +82,20 @@ public class MySQLAdsDao implements Ads {
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving the ads.", e);
+        }
+    }
+
+    @Override
+    public long deleteAd(long id) {
+        PreparedStatement stmt;
+        String sql = "DELETE FROM ads WHERE id = ?";
+        try {
+            stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, id);
+            long result = stmt.executeUpdate();
+            return result;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
