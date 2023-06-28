@@ -98,6 +98,8 @@ public class MySQLAdsDao implements Ads {
             return createAdsFromResults(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
 
     public long deleteAd(long id) {
         PreparedStatement stmt;
