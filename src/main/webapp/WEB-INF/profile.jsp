@@ -40,4 +40,8 @@
 </div>
 <jsp:include page="/WEB-INF/partials/script.jsp" />
 </body>
+    <footer>
+        <jsp:include page="/WEB-INF/partials/footer.jsp" />
+    </footer>
+
 </html>
