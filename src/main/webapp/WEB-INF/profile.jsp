@@ -19,8 +19,12 @@
                 <div class="col-md-6">
                     <h2>${ad.title}</h2>
                     <p>${ad.description}</p>
-                    <button onclick="updateAd()">Update</button>
-                    <button onclick="deleteAd()">Delete</button>
+                    <form action="/profile" method="post">
+                        <label for="ad_id"></label>
+                        <input style="display: none;" type="text" id="ad_id" value=${ad.id} name="ad_id">
+                        <button type="submit" onclick="updateAd()">Update</button>
+                        <button type="submit" onclick="deleteAd()">Delete</button>
+                    </form>
                 </div>
             </c:forEach>
         </div>
